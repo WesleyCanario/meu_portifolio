@@ -1,11 +1,12 @@
 import { certifications, education, experience } from "@/data/experience";
+import { Container } from "./Container";
 import { RevealOnScroll } from "./RevealOnScroll";
 import { SectionHeading } from "./SectionHeading";
 
 export function Experience() {
   return (
-    <section id="experiencia" className="border-t border-zinc-100 py-24 sm:py-32 dark:border-zinc-900">
-      <div className="mx-auto max-w-content px-6 sm:px-8">
+    <section id="experiencia" className="border-t border-zinc-200/60 py-20 sm:py-28 dark:border-zinc-800/60">
+      <Container>
         <RevealOnScroll>
           <SectionHeading
             eyebrow="Trajetória"
@@ -14,10 +15,10 @@ export function Experience() {
           />
         </RevealOnScroll>
 
-        <ol className="relative max-w-3xl border-l border-zinc-200 pl-8 dark:border-zinc-800">
+        <ol className="relative max-w-3xl border-l border-secondary/25 pl-8 dark:border-secondary/25">
           {experience.map((item, index) => (
             <li key={`${item.company}-${item.period}`} className="relative mb-12 last:mb-0">
-              <span className="absolute -left-[2.3rem] top-1.5 h-2 w-2 rounded-full bg-accent" />
+              <span className="absolute -left-[2.3rem] top-1.5 h-2 w-2 rounded-full bg-secondary shadow-[0_0_8px_0_rgba(59,130,246,0.6)]" />
               <RevealOnScroll delayMs={index * 60}>
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
                   {item.period}
@@ -78,7 +79,7 @@ export function Experience() {
             </div>
           </div>
         </RevealOnScroll>
-      </div>
+      </Container>
     </section>
   );
 }

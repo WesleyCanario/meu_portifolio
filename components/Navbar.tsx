@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Container } from "./Container";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
@@ -31,10 +32,10 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4 sm:px-8">
+      <Container as="nav" className="flex items-center justify-between py-4">
         <a
           href="#top"
-          className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+          className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-white"
         >
           Wesley Canario
         </a>
@@ -44,7 +45,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+              className="text-sm text-zinc-600 transition-colors hover:text-secondary-dark dark:text-zinc-400 dark:hover:text-secondary-light"
             >
               {link.label}
             </a>
@@ -63,11 +64,11 @@ export function Navbar() {
             {open ? <X className="h-4 w-4" strokeWidth={1.5} /> : <Menu className="h-4 w-4" strokeWidth={1.5} />}
           </button>
         </div>
-      </nav>
+      </Container>
 
       {open && (
-        <div className="border-t border-zinc-200 bg-white px-6 py-4 md:hidden dark:border-zinc-800 dark:bg-zinc-950">
-          <div className="flex flex-col gap-4">
+        <div className="border-t border-zinc-200 bg-white py-4 md:hidden dark:border-zinc-800 dark:bg-zinc-950">
+          <Container className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -78,7 +79,7 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-          </div>
+          </Container>
         </div>
       )}
     </header>

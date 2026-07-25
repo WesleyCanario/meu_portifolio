@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { personal } from "@/data/personal";
+import { Container } from "./Container";
 import { RevealOnScroll } from "./RevealOnScroll";
 
 // Iniciais usadas como avatar placeholder até que uma foto real seja adicionada.
@@ -11,17 +12,17 @@ const initials = personal.name
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen items-center pt-24">
-      <div className="mx-auto grid w-full max-w-content items-center gap-12 px-6 sm:px-8 md:grid-cols-[1.3fr_0.7fr] md:gap-8">
+    <section id="top" className="relative flex items-center pb-16 pt-28 sm:pb-24 sm:pt-36">
+      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll>
           {personal.availableForWork && (
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-xs font-medium text-secondary-dark dark:border-secondary/30 dark:bg-secondary/10 dark:text-secondary-light">
+              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
               Disponível para novos projetos
             </div>
           )}
 
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl dark:text-zinc-50">
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl dark:text-white">
             {personal.name}
           </h1>
 
@@ -41,27 +42,29 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#projetos"
-              className="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-zinc-900 transition-colors hover:bg-accent-dark"
             >
               Ver projetos
-              <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </a>
             <a
               href="#contato"
-              className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-600 dark:hover:text-zinc-50"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition-colors hover:border-secondary hover:text-secondary-dark dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-secondary dark:hover:text-secondary-light"
             >
               Fale comigo
             </a>
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delayMs={150} className="flex justify-center md:justify-end">
+        <RevealOnScroll delayMs={150} className="flex justify-center lg:justify-end">
           {/* TODO: trocar por <Image src="/avatar.jpg" .../> quando houver uma foto real. */}
-          <div className="flex h-40 w-40 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-3xl font-semibold text-zinc-400 sm:h-52 sm:w-52 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-600">
-            {initials}
+          <div className="rounded-full bg-gradient-to-br from-accent/60 via-secondary/40 to-accent/60 p-[3px]">
+            <div className="flex h-52 w-52 items-center justify-center rounded-full bg-zinc-100 text-5xl font-semibold text-zinc-400 sm:h-72 sm:w-72 lg:h-[374px] lg:w-[374px] dark:bg-zinc-950 dark:text-zinc-600">
+              {initials}
+            </div>
           </div>
         </RevealOnScroll>
-      </div>
+      </Container>
     </section>
   );
 }

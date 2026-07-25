@@ -10,18 +10,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta neutra "Apple style": grafite/branco + um único acento discreto (azul-acinzentado).
+        // Identidade "dados": amarelo (Power BI) para ação/destaque primário,
+        // azul (SQL/dados) para elementos informativos/secundários.
         accent: {
-          DEFAULT: "#4C6FA6",
-          light: "#6E8CBF",
-          dark: "#3A5580",
+          DEFAULT: "#F2C811",
+          light: "#F6D444",
+          dark: "#C9A50D",
+        },
+        secondary: {
+          DEFAULT: "#3B82F6",
+          light: "#60A5FA",
+          dark: "#2563EB",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-      },
-      maxWidth: {
-        content: "72rem",
       },
       keyframes: {
         "fade-slide-up": {

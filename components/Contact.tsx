@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { personal } from "@/data/personal";
+import { Container } from "./Container";
 import { RevealOnScroll } from "./RevealOnScroll";
 import { SectionHeading } from "./SectionHeading";
 
@@ -32,8 +33,8 @@ const CONTACT_LINKS = [
 
 export function Contact() {
   return (
-    <section id="contato" className="border-t border-zinc-100 py-24 sm:py-32 dark:border-zinc-900">
-      <div className="mx-auto max-w-content px-6 sm:px-8">
+    <section id="contato" className="border-t border-zinc-200/60 py-20 sm:py-28 dark:border-zinc-800/60">
+      <Container>
         <RevealOnScroll>
           <SectionHeading
             eyebrow="Contato"
@@ -50,13 +51,13 @@ export function Contact() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-4 rounded-xl border border-zinc-200 p-5 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
+                className="flex items-center gap-4 rounded-xl border border-zinc-200 bg-white/60 p-5 transition-all hover:border-secondary/50 hover:shadow-[0_0_28px_-10px_rgba(59,130,246,0.5)] dark:border-zinc-800 dark:bg-zinc-900/40"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-50 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary-dark dark:text-secondary-light">
                   <link.icon className="h-[18px] w-[18px]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">{link.label}</p>
+                  <p className="text-sm font-medium text-zinc-900 dark:text-white">{link.label}</p>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">{link.value}</p>
                 </div>
               </a>
@@ -68,7 +69,7 @@ export function Contact() {
             {personal.location}
           </div>
         </RevealOnScroll>
-      </div>
+      </Container>
     </section>
   );
 }

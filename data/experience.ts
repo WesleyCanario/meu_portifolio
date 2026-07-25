@@ -62,26 +62,6 @@ export const experience: ExperienceItem[] = [
       "Cadastro de clientes e suporte à equipe de vendas.",
     ],
   },
-  {
-    company: "Dialli Distribuidora de Alimentos",
-    role: "Assistente Comercial",
-    period: "dez. 2013 – ago. 2016",
-    location: "",
-    highlights: [
-      "Controle de verbas de fornecedores com relatórios detalhados em Excel.",
-      "Gerenciamento de bonificações, aprovações e trocas de produtos.",
-    ],
-  },
-  {
-    company: "Sonkey",
-    role: "Analista de SAC",
-    period: "mai. 2012 – jul. 2013",
-    location: "Londrina, PR",
-    highlights: [
-      "Atendimento ao cliente e suporte técnico de produtos.",
-      "Processamento de notas de entrada/saída via SAP.",
-    ],
-  },
 ];
 
 export type EducationItem = {

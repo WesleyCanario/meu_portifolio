@@ -1,11 +1,12 @@
 import { about } from "@/data/personal";
+import { Container } from "./Container";
 import { RevealOnScroll } from "./RevealOnScroll";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
   return (
-    <section id="sobre" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-content px-6 sm:px-8">
+    <section id="sobre" className="py-20 sm:py-28">
+      <Container>
         <RevealOnScroll>
           <SectionHeading eyebrow="Sobre" title="Quem sou eu" />
         </RevealOnScroll>
@@ -17,7 +18,7 @@ export function About() {
             ))}
           </div>
         </RevealOnScroll>
-      </div>
+      </Container>
     </section>
   );
 }

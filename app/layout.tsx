@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { LazyParticlesBackground } from "@/components/LazyParticlesBackground";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { personal } from "@/data/personal";
@@ -49,8 +50,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans">
         <ThemeProvider>
+          <LazyParticlesBackground />
           <Navbar />
-          <main>{children}</main>
+          <main className="relative">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
